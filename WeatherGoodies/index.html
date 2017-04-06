@@ -1,0 +1,99 @@
+<html>
+
+<head>
+    <title>obregon.website - Weather Goodies</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+
+    <!-- Go get jquery from the root folder scripts -->
+    <script src="/scripts/jquery-3.1.1.min.js"></script>
+
+    <!-- Get our 5 day forecast script -->
+    <script src="/scripts/forecast.js"></script>
+
+    <!-- Get any alerts for Collin county -->
+    <script src="/scripts/wx-alerts.js"></script>
+
+    <!-- Get google map stuff -->
+    <script src="/scripts/google-map.js"></script>
+
+    <!-- Get Google API -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvF1mtUEnijkgIS0BEyDt7P1SP7HmTjo0&callback=initMap"></script>
+
+    <script>
+    $(document).ready(function(){
+        getForecast("McKinney");
+        fetchAlerts("McKinney");
+    })
+    </script>
+
+
+</head>
+
+<body>
+<div class="container">
+    <header><h1>Weather Goodies</h1>
+    This is a collection of web pages that I like to visit for checking on the weather.
+    </header>
+    <nav>
+        <ul>
+        <li><a href="http://www.spc.noaa.gov/" target="_new">Storm Prediction Center</a></li>
+        <li><a href="http://texasstormchasers.com" target="_new">TX Storm Chasers</a></li>
+        <li><a href="http://www.weather.gov/fwd/" target="_new">DFW NWS</a></li>
+        <li><a href="https://maps.darksky.net" target="_new">Real-Time Temps</a></li>
+        <li><a href="http://hint.fm/wind/" target="_new">Wind Map</a></li>
+        <li><a href="http://www.wfaa.com/weather/" target="_new">WFAA Wx</a></li>
+        <li><a href="http://spotterguides.us/" target="_new">Storm Spotter Guides</a> (from <a href="http://skywarn.org/" target="_new">Skywarn</a>)</li>
+        </ul>
+        <ul>
+            <li><a href="#" onClick="getForecast('Helotes');fetchAlerts('Helotes');">Helotes</a></li>
+            <li><a href="#" onClick="getForecast('Plano');fetchAlerts('Plano');">Plano</a></li>
+            <li><a href="#" onClick="getForecast('McKinney');fetchAlerts('McKinney');">McKinney</a></li>
+            <li><a href="#" onClick="getForecast('San Marcos');fetchAlerts('San Marcos');">San Marcos</a></li>
+            <li><input type="text" placeholder="Enter a City" onChange="getForecast(this.value);fetchAlerts(this.value);"></li>
+        </ul>
+    </nav>
+    <article>
+        <table>
+        <tr>
+        <td colspan=3 align="center"><b>SPC Severe Thunderstorm Outlook<b></td>
+        <td rowspan=4>
+            <a class="twitter-timeline" data-lang="en" data-width="250" data-height="400" data-theme="dark" href="https://twitter.com/wfaaweather">Tweets by Pete Delkus</a> <script async src="http://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </td>
+        </tr>
+        <tr>
+            <td>Day 1 Outlook</td>
+            <td>Day 2 Outlook</td>
+            <td>Day 3 Outlook</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                <a href="http://www.spc.noaa.gov/products/outlook/day1otlk.html" target="_new"
+                    ><img src="http://www.spc.noaa.gov/products/outlook/day1otlk_sm.gif"></a>
+                    </td>
+            <td>
+                <a href="http://www.spc.noaa.gov/products/outlook/day2otlk.html" target="_new"
+                    ><img src="http://www.spc.noaa.gov/products/outlook/day2otlk_sm.gif"></a>
+            </td>
+            <td>
+                <a href="http://www.spc.noaa.gov/products/outlook/day3otlk.html" target="_new"
+                    ><img src="http://www.spc.noaa.gov/products/outlook/day3otlk_sm.gif"></a>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td><div id="5day-forecast" ></div></td>
+            <td><div id="wx-alerts"></div></td>
+            <td><div id="google-map"></div></td>
+            <td>&nbsp;</td>
+            </tr>
+        </table>
+        
+    </article>
+    <footer>
+    <a href="https://my.bluehost.com/hosting/cpanel" target="_new" class="footer-link">&copy;</a> 2017 Daniel Obregon, Independent Software Developer.
+    </footer>
+</div>
+</body>
+
+</html>

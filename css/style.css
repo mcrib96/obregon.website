@@ -1,0 +1,89 @@
+a {text-decoration:none;}
+a:hover {background-color: #CCCCCC;}
+a:visited{color:black;}
+
+
+div.container {
+    width: 100%;
+    border: 1px solid gray;
+}
+
+header, footer {
+    padding: 1em;
+    color: white;
+    background-color: black;
+    clear: left;
+    text-align: center;
+}
+.footer-link {
+    color:white;
+}
+
+nav {
+    float: left;
+    max-width: 160px;
+    margin: 0;
+    padding: 1em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+   
+nav ul a {
+    text-decoration: none;
+}
+
+article {
+    margin-left: 170px;
+    border-left: 1px solid gray;
+    padding: 1em;
+    overflow: hidden;
+}
+
+article table td {
+    vertical-align: top;
+}
+
+.forecast_table {
+    text-align: center;
+    font-size: 12px;
+    width:200px;
+    vertical-align: top;
+}
+
+.forecast_table td {
+    border:1px solid #cccccc;
+    padding-left:5px;
+    padding-right:5px;
+    vertical-align: top;
+}
+.forecast_table thead {
+    font-weight: bold;
+}
+
+.wx_alerts_table {
+    font-size:12px;
+    vertical-align: top;
+    width:200px;
+    overflow-x:auto;
+}
+.wx_alerts_table thead {
+    font-weight: bold;
+    color:red;
+}
+.wx_alerts_table td.title, .wx_alerts_table a {
+    color:red;
+    font-weight:bold;
+    vertical-align: top;
+}
+.wx_alerts_table td {
+    font-size:12px;
+    vertical-align: top;
+}
+
+#google-map {
+    width:200px;
+    height:200px;
+}

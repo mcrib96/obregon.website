@@ -1,0 +1,56 @@
+<html>
+
+<head>
+	<title>Insurance Tools - County Lookup</title>
+	
+	<!-- Basic styling for this web page -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	
+	<!-- Powerful library to make life easier. -->
+	<script src="scripts/jquery-3.1.1.min.js"></script>
+	
+	<!-- This is a list of all the CAD web sites for each Texas county -->
+	<script src="scripts/texas_counties.js"></script>
+	<!-- These are websites that we can do more advanced things. -->
+	<script src="scripts/texas_counties_advanced.js"></script>
+	
+	<!-- This is a utility to clean up things like lane, street, etc. from the street name -->
+	<!-- CAD websites don't like them -->
+	<script src="scripts/clean_route.js"></script>
+	
+	<!--  This just throws a popup that tells a little about this page. -->
+	<script src="scripts/about.js"></script>
+	
+	<!--  This contains all the county lookup magic. -->
+	<script src="scripts/county_lookup.js"></script>
+
+
+</head>
+
+<body>
+
+<h3><a href="index.html">Insurance Tools</a> | County Lookup Tool <a href="javascript:void();" onClick="about();">?</a></h3>
+
+
+<form name="aform" id="aform">
+<table>
+<tr><td>Input the Address Below</td></tr>
+<tr><td>Address</td><td><input type="text" name="address" id="address"></td></tr>
+<tr><td>City</td><td><input type="text" name="city" id="city"></td></tr>
+<tr><td>State</td><td><input type="text" name="state" id="state" value="TX"></td></tr>
+<tr><td>Zip Code</td><td><input type="text" name="zip" id="zip"></td></tr>
+<tr><td colspan=2>
+<input type="button" onClick="findCounty();" value="Lookup County" >
+<input type="reset" value="Clear Form" onClick="document.title='Insurance Tools - County Lookup';aform.reset();";>
+</td></tr>
+</table>
+<BR><BR>
+<div id="full_address"></div>
+<div id="county_name"></div>
+</form>
+
+&copy; 2017 Daniel Obregon, Independent Software Developer.
+
+</body>
+
+</html>
